@@ -1,0 +1,14 @@
+DirectoryIndex index.html
+
+RewriteEngine On 
+RewriteCond %{REQUEST_URI} Home [NC]
+RewriteRule ^(\w+)$ ./index.html
+
+RewriteCond %{REQUEST_URI} contact [NC]
+RewriteRule ^(\w+)$ ./index.html
+
+RewriteCond %{REQUEST_URI} video [NC]
+RewriteRule ^(\w+)$ ./index.html
+
+RewriteCond %{REQUEST_URI} blog [NC]
+RewriteRule ^(\w+)$ ./index.html

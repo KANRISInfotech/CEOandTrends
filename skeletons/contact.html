@@ -1,0 +1,345 @@
+<div class="container" style="width:100%;padding:0;">
+    <img src="images/contact.jpg" width="100%" ; alt="">
+</div>
+<div class="container" style="width:100%;padding:0;">
+    <div class="col-md-6 col-sm-6 col-xs-12" style="height:450px;padding:0;">
+        <div id="map"></div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12 contact_info">
+        <h4>Address</h4>
+        <h6 style="color:#bbb;">B-405, Ganesh paradise, Opp Digi-One Showroom,<br/>Mumbai, Maharashtra - 421503</h6>
+        <br/>
+        <h4>email</h4>
+        <h6 style="color:#bbb;cursor:pointer;" onclick="window.open('mailto:hey@ceoandtrends.com',_blank);">hey@ceoandtrends.com</h6>
+        <br/>
+        <h4>number</h4>
+        <h6 style="color:#bbb;cursor:pointer;" onclick='window.location.href="tel:+919664849315"'>+91 9664 849 315</h6>
+        <div style="padding-left:4px;">
+            <a href="https://goo.gl/T5KUcA"><i class="fab fa-youtube"></i></a><a href="https://www.facebook.com/ceoandtrends/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/ceoandtrends"><i class="fab fa-twitter"></i></a><a href="https://www.instagram.com/ceoandtrends/"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="container contact_form">
+    <center>
+        <h4 id="fftc" style="font-family:'Roboto Condensed',Sans-serif;text-transform:uppercase;font-size:24px;padding-bottom:5px;">feel free to connect</h4>
+        <h4 id="mow" style="font-family:'Roboto Condensed',Sans-serif;text-transform:uppercase;font-size:24px;padding-bottom:5px;display:none;">the mailman is on his way <i style="color:#ad9132" class="fab fa-studiovinari"></i></h4>
+    </center>
+    <div id="contact_form">
+        <div class="col-md-4 col-sm-4" style="padding:0;">
+            <div class="group">
+                <input id="contact_name" type="text" name="name" required />
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="custom">Name</label>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4" style="padding:0;">
+            <div class="group">
+                <input id="contact_email" type="text" name="name" required />
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="custom">Email</label>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4" style="padding:0;">
+            <div class="group">
+                <input id="contact_mobile" type="text" name="name" class="numbers_only" required />
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="custom">Mobile</label>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12" style="padding:0;">
+            <div class="group">
+                <input type="text" name="name" required />
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="custom">Message</label>
+            </div>
+        </div>
+        <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+            <input id="contact_submit" type="submit" value="Send Message" class="btn">
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<style>
+    .blog {
+        padding-bottom: 50px;
+    }
+    
+    .blog h3 {
+        font-family: 'Roboto Condensed', sans-Serif;
+        text-transform: capitalize;
+        font-size: 32px;
+        color: #333;
+        padding-bottom: 15px;
+    }
+    
+    .blog-tile {
+        margin-left: 7%;
+        width: 86%;
+        background: url('blog_thumb.png');
+        background-size: 100%;
+        background-position: center;
+        transition: all 0.3s;
+        cursor: pointer;
+        box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.5), 0px 0px 5px 5px rgba(50, 50, 50, 0.15), 0px 0px 7px 7px rgba(50, 50, 50, 0.05);
+    }
+    
+    .blog-tile:hover {
+        background-size: 110%;
+        transition: all 0.3s;
+        box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.2), 0px 0px 5px 5px rgba(50, 50, 50, 0.05), 0px 0px 7px 7px rgba(50, 50, 50, 0.01);
+    }
+    
+    .videos {
+        padding-bottom: 50px;
+    }
+    
+    .videos h3 {
+        font-family: 'Roboto Condensed', sans-Serif;
+        text-transform: capitalize;
+        font-size: 32px;
+        color: #333;
+        padding-bottom: 15px;
+    }
+    
+    .video-tile {
+        margin-left: 7%;
+        width: 86%;
+        background: url('video-tile.png');
+        background-size: 100%;
+        background-position: center;
+        transition: all 0.3s;
+        cursor: pointer;
+        box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.5), 0px 0px 5px 5px rgba(50, 50, 50, 0.15), 0px 0px 7px 7px rgba(50, 50, 50, 0.05);
+    }
+    
+    .video-tile:hover {
+        background-size: 110%;
+        transition: all 0.3s;
+        box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.2), 0px 0px 5px 5px rgba(50, 50, 50, 0.05), 0px 0px 7px 7px rgba(50, 50, 50, 0.01);
+    }
+    
+    .contact_info {
+        height: 450px;
+        background-color: #2a2b29;
+        padding: 20px;
+        padding-top: 50px;
+    }
+    
+    .contact_info h4 {
+        color: #ad9132;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-family: 'Roboto Condensed', Sans-serif;
+    }
+    
+    .contact_info h6 {
+        color: #bbb;
+        font-size: 16px;
+        font-family: 'Roboto Condensed', Sans-serif;
+        border-left: 2px solid #ad9132;
+        padding-left: 6px;
+    }
+    
+    .contact_info h6:hover {
+        color: #ad9132;
+    }
+    
+    .contact_info .fab {
+        padding-top: 20px;
+        padding-right: 30px;
+        font-size: 24px;
+        color: #777;
+        transition: all 0.4s;
+    }
+    
+    .contact_info .fa-youtube:hover {
+        color: #cc181e;
+    }
+    
+    .contact_info .fa-facebook-f:hover {
+        color: #3b5998;
+    }
+    
+    .contact_info .fa-twitter:hover {
+        color: #00aced;
+    }
+    
+    .contact_info .fa-instagram:hover {
+        color: #fccc63;
+        transition: all 0.3s;
+        background: radial-gradient(circle at 20% 150%, #fdf497 0%, #fdf497 10%, #fd5949 45%, #d6249f 56%, #285AEB 58%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<script>
+    window.onload = function() {
+        setInterval(function() {
+            $('.blog').css('margin-top', $('.css-slider-wrapper').height());
+            $(".blog-tile").css('height', $(".blog-tile").width());
+            $(".video-tile").css('height', $(".video-tile").width());
+        }, 10);
+    }
+</script>
+<script>
+    var map;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: new google.maps.LatLng(19.117899, 72.871478),
+            mapTypeId: 'roadmap',
+            styles: [{
+                "featureType": "all",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "saturation": 36
+                }, {
+                    "color": "#000000"
+                }, {
+                    "lightness": 40
+                }]
+            }, {
+                "featureType": "all",
+                "elementType": "labels.text.stroke",
+                "stylers": [{
+                    "visibility": "on"
+                }, {
+                    "color": "#000000"
+                }, {
+                    "lightness": 16
+                }]
+            }, {
+                "featureType": "all",
+                "elementType": "labels.icon",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            }, {
+                "featureType": "administrative",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 20
+                }]
+            }, {
+                "featureType": "administrative",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 17
+                }, {
+                    "weight": 1.2
+                }]
+            }, {
+                "featureType": "landscape",
+                "elementType": "geometry",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 20
+                }]
+            }, {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 21
+                }]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 17
+                }]
+            }, {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 29
+                }, {
+                    "weight": 0.2
+                }]
+            }, {
+                "featureType": "road.arterial",
+                "elementType": "geometry",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 18
+                }]
+            }, {
+                "featureType": "road.local",
+                "elementType": "geometry",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 16
+                }]
+            }, {
+                "featureType": "transit",
+                "elementType": "geometry",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 19
+                }]
+            }, {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [{
+                    "color": "#000000"
+                }, {
+                    "lightness": 17
+                }]
+            }],
+            zoomControl: true,
+            mapTypeControl: false,
+            scaleControl: true,
+            streetViewControl: false,
+            rotateControl: false,
+            fullscreenControl: true
+        });
+        var myLatLng = new google.maps.LatLng(19.117899, 72.871478);
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            icon: 'http://ceoandtrends.com/demo/images/ceoandtrends_map_marker.png',
+        });
+        var contentString = "";
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        marker.addListener('click', function() {
+            /* infowindow.open(map, marker); */
+            window.open('https://www.google.com/maps/place/CEO+%26+Trends/@19.160039,73.239487,16z/data=!4m5!3m4!1s0x0:0x9319360330adee5e!8m2!3d19.1600393!4d73.2394871?hl=en-IN');
+        });
+    }
+</script>
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQrwBmds0yPtfIFAMpu1LuyBrLxX8-_5s&callback=initMap&signed_in=true">
+</script>
+<link rel="stylesheet" href="css/maps.css">
+
+</html>

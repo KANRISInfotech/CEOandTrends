@@ -1,0 +1,274 @@
+<buffer>
+    <div class="buffer">
+
+    </div>
+</buffer>
+<videolist style="padding-top:50px;display:none;">
+    <br/>
+    <br/>
+    <div class="container" style="width:100%;padding:5%;">
+        <div class="col-md-12 col-sm-12">
+            <p style="color:#aaa;font-size:18px;"><i>Latest from</i> <b>CEO</b> & TRENDS</p>
+            <div id="video-list">
+                <div id="single-video-item" class="single-video-item hide" video-id="">
+                    <div class="left-thumbnail">
+                        <center>
+                            <img id="img_thumbnail" src="" alt="">
+                        </center>
+                    </div>
+                    <div class="right-information">
+                        <div class="title-video" style="border-bottom:1px solid #ddd;">
+                            <h5 id="title-video-main"></h5>
+                            <h6 id="title-video-sub"></h6>
+                            <p><i class="fas fa-thumbs-up"></i><span id="likeCount"></span><span><i class="fas fa-eye"></i><span id="viewCount"></span></span>
+                            </p>
+                        </div>
+                        <p id="video-description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-4 col-sm-4"></div> -->
+    </div>
+</videolist>
+<videosection style="display:none;">
+    <div class="video_bg container" style="background-image:url('images/ct_bg.jpg');width:100%;">
+        <h3 id="back_button" style="cursor:pointer;opacity:0;display:none;"><i class="fas fa-angle-double-left"></i> BACK</h3>
+        <center>
+            <div id="video_wrap" style="padding-top:25px;">
+                <div class="v_iframe" id="player"></div>
+            </div>
+            <br/>
+            <div class="g-ytsubscribe" data-channelid="UC8FzXbof8X9eEwX3OuKEpGw" data-layout="default" data-count="default"></div>
+        </center>
+        <script src="https://apis.google.com/js/platform.js"></script>
+    </div>
+    <div class="social">
+        <div class="tw_share c_share col-md-3 col-lg-3 col-sm-3 col-xs-3">
+            <p><i class="fab fa-twitter"></i><span> - Twitter</span></p>
+        </div>
+        <div class="fb_share c_share col-md-3 col-lg-3 col-sm-3 col-xs-3">
+            <p><i class="fab fa-facebook-f"></i><span> - Facebook</span></p>
+        </div>
+        <div class="rt_share c_share col-md-3 col-lg-3 col-sm-3 col-xs-3">
+            <p><i class="fab fa-reddit"></i><span> - Reddit</span></p>
+        </div>
+        <div class="em_share c_share col-md-3 col-lg-3 col-sm-3 col-xs-3">
+            <p><i class="fas fa-envelope-open"></i><span> - Email</span></p>
+        </div>
+    </div>
+    <div class="description container" style="width:100%;">
+        <div class="col-md-8">
+            <h3 id="description_h">Union budget of India 2018 | Budget Special
+            </h3>
+            <!-- <h4 id="description_sh">An Overview by Dr. Abhay Nagale</h4> -->
+            <p id="description_p">
+                2018 Union budget of India is out by the finance minister of the country Mr Arun Jaitely. Dr Abhay Nagale from Indian Institute of Securities Market is invited on the CEO & Trends to summarise the important points mentioned in the budget. He has acquired
+                his PhD. from IIT Bombay, India. <br/>Following are the questions asked in the interview.</p>
+            <!-- <h5>1. What do you think is the focus of this year's Indian Union Budget?<br/>2. What are the major changes in the Income Tax Laws?<br/>3. Are there any changes for corporates and startups?<br/> 4. Will there be an increase in the prices of
+                    consumer products after this budget?<br/> 5. According to you, how is the government's fiscal position?<br/> 6. Overall view of the budget.<br/></h5> -->
+            <p>
+                Please Like, Comment & Subscribe to our channel: <br/><a href="https://goo.gl/T5KUcA"><i class="fab fa-youtube"></i></a><a href="https://www.facebook.com/ceoandtrends/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/ceoandtrends"><i class="fab fa-twitter"></i></a><a href="https://www.instagram.com/ceoandtrends/"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <br/>
+        </div>
+    </div>
+</videosection>
+<br/>
+<script>
+    window.onload = function() {
+
+    }
+    $(document).ready(function() {
+        $("#videos").click(function() {
+            player.stopVideo();
+            $('videolist').fadeIn();
+            $('videosection').hide();
+        })
+        $("#back_button").click(function() {
+            player.stopVideo();
+            $('videolist').fadeIn();
+            $('videosection').hide();
+        })
+        $(".buffer").css('height', $('#navbarlogo').height());
+    })
+
+    function setsizesforvideo() {
+        setInterval(function() {
+            $(".buffer").css('height', $('#navbarlogo').height());
+            $(".video_bg").css('height', $(window).height() - $(".buffer").height());
+            if ($(window).width() > 700) {
+                $(".v_iframe").css('height', $(".video_bg").height() * 0.75);
+                $(".v_iframe").css('width', $(".video_bg").width() * 0.50);
+            } else {
+                /* $(".video_bg").css('height', ($(window).height() - $(".buffer").height()) * 0.6); */
+                $(".v_iframe").css('height', $(window).width() * 0.56);
+                $(".v_iframe").css('width', "100%");
+            }
+            if (($(".video_bg").height() - $(".v_iframe").height()) > 0) {
+                $(".v_iframe").css('margin-top', (($(".video_bg").height() - $(".v_iframe").height()) / 2) - $("#back_button").height() - 35);
+            }
+        }, 100);
+    }
+</script>
+
+<script>
+    $(document).ready(function() {
+        getvideodata();
+        $('#video-list').on('click', 'a.single-video-item', function() {
+            alert('k');
+        });
+    })
+
+    function getvideodata() {
+        $.ajax({
+            url: 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCj0CWUh2PSVdXdkDxdVw_hiYjNUkjR4PE&channelId=UC8FzXbof8X9eEwX3OuKEpGw&part=snippet,id&order=date&maxResults=50',
+            success: function(result) {
+                $.each(result.items, function(index, video) {
+                    if (video.id.videoId !== undefined) {
+                        $.ajax({
+                            url: 'https://www.googleapis.com/youtube/v3/videos?id=' + video.id.videoId + '&part=statistics,snippet&key=AIzaSyCj0CWUh2PSVdXdkDxdVw_hiYjNUkjR4PE',
+                            success: function(result) {
+                                if (result.items[0].snippet.description.indexOf("This is full episode") >= 0) {
+                                    var divTag = $(".single-video-item:first").clone();
+                                    $(divTag).attr('onclick', ' $("videosection").show();$("videolist").hide();history.pushState({}, null, "video?' + video.id.videoId + '");openvideo("' + video.id.videoId + '")');
+                                    $(divTag).attr('video-id', video.id.videoId);
+                                    $(divTag).find("#title-video-main").text(video.snippet.title);
+                                    $(divTag).find("#video-description").text(video.snippet.description);
+                                    $(divTag).find("#img_thumbnail").attr('src', video.snippet.thumbnails.medium.url);
+                                    $(divTag).find("#likeCount").text(result.items[0].statistics.likeCount);
+                                    $(divTag).find("#viewCount").text(result.items[0].statistics.viewCount);
+                                    $(divTag).removeClass('hide');
+                                    $("#video-list").append(divTag);
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
+
+    function openvideo(id) {
+        $.ajax({
+            url: 'https://www.googleapis.com/youtube/v3/videos?id=' + id + '&part=statistics,snippet&key=AIzaSyCj0CWUh2PSVdXdkDxdVw_hiYjNUkjR4PE',
+            success: function(result) {
+                $("#description_h").text(result.items[0].snippet.title);
+                var description_final = String(result.items[0].snippet.description.replace("  ", "<br/>"));
+                $("#description_p").html(description_final.substr(0, description_final.indexOf('This is full episode')));
+                player.loadVideoById(id);
+                $("meta[name='description']").attr('content', description_final.substr(0, description_final.indexOf('This is full episode')));
+                $(document).attr("title", "CEO & Trends | " + result.items[0].snippet.title);
+                $("meta[name='title']").attr('content', "CEO & Trends | " + result.items[0].snippet.title);
+                var t = "";
+                $.each(result.items[0].snippet.tags, function(index, x) {
+                    if (index > 0) {
+                        t = t + ',' + x;
+                    } else {
+                        t = t + x;
+                    }
+                })
+                window.setTimeout(function() {
+                    $("meta[name='keywords']").attr('content', t);
+                }, 100)
+            }
+        })
+        $('videolist').hide();
+        $('videosection').show();
+        /* $(".ytp-play-button").click(); */
+    }
+</script>
+
+<script>
+    var video_id = "";
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: 'M7lc1UVf-VE',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        var url = window.location.href;
+        if (url.indexOf('video?') !== -1) {
+            url = window.location.href;
+            var video_id = url.substr(url.indexOf('?') + 1);
+            openvideo(video_id);
+            event.target.playVideo();
+            $('videosection').show();
+            $('videolist').hide();
+        } else {
+            $('videosection').hide();
+            $('videolist').fadeIn();
+        }
+        /* event.target.playVideo(); */
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+            /* setTimeout(stopVideo, 500); */
+            done = true;
+        }
+    }
+
+    function stopVideo() {
+        player.stopVideo();
+    }
+</script>
+<style>
+    #back_button {
+        padding-top: 25px;
+        padding-left: 40px;
+        transition: all 0.3s;
+        color: #aaa;
+    }
+    
+    #back_button:hover {
+        color: #eee;
+        padding-left: 30px;
+        transition: all 0.3s;
+    }
+    
+    #back_button i {
+        background: #aaa;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s;
+    }
+    
+    #back_button:hover i {
+        background: linear-gradient(45deg, #ad9132, #f0ce40);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding-right: 7px;
+        transition: all 0.3s;
+    }
+    
+    videosection {
+        display: block;
+        overflow-x: hidden;
+    }
+</style>
+
+</html>

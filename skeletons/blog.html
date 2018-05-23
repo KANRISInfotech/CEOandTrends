@@ -1,0 +1,251 @@
+<buffer>
+    <div class="buffer">
+
+    </div>
+</buffer>
+<bloglist style="padding-top:50px;">
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="blogtilewrapper col-md-6" style="display:none;" thisblogdata="" onclick="showblog($('this').attr('thisblogdata'));">
+            <div class="blogtilecontainer">
+                <div class="blogtileimage">
+                    <img src="http://ceoandtrends.com/myblog/wp-content/uploads/2018/04/4.jpg" alt="">
+                </div>
+                <div class="blogtilecontent">
+                    <h4 class="blogtiletitle">
+                        JEE Mains answer keys 2018 released: Here’s direct link to check
+                    </h4>
+                    <h3 class="blogtitleby">
+                        april 24, 2018 BY admin
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</bloglist>
+<blogsection style="display:none;">
+    <div class="blog_bg container" style="width:100%;">
+
+    </div>
+    <div class="social">
+        <div class="tw_share c_share col-md-3 col-lg-3 col-sm-3 col-xs-3">
+            <p><i class="fab fa-twitter"></i><span> - Twitter</span></p>
+        </div>
+        <div class="fb_share c_share col-md-3 col-lg-3 col-sm-3 col-xs-3">
+            <p><i class="fab fa-facebook-f"></i><span> - Facebook</span></p>
+        </div>
+        <div class="rt_share c_share col-md-3 col-lg-3 col-sm-3 col-xs-3">
+            <p><i class="fab fa-reddit"></i><span> - Reddit</span></p>
+        </div>
+        <div class="em_share c_share col-md-3 col-lg-3 col-sm-3 col-xs-3">
+            <p><i class="fas fa-envelope-open"></i><span> - Email</span></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="singleblogwrapper col-md-8">
+            <h3 class="singleblogwrappertitle" style="font-size:26px;color:#333;"></h3>
+            <h4 class="singleblogwrapperby" style="font-size:18px;color:#555;"></h4>
+            <p class="singleblogtext" style="font-size:18px;"></p>
+            <div class="comments_section">
+                <h4 id="commentcount" style="font-family:'Roboto',sans-serif;color:#555;font-size:24px;">8 Comments</h4>
+                <div class="commentswrapper">
+                    <div class="singlecomment" style="display: none;">
+                        <h4 style="margin-bottom:8px;">A Test Commentor</h4>
+                        <h5 style="margin-bottom:10px;">APRIL 23, 2018 AT 6:06 PM</h5>
+                        <p>
+                            Hi, this is a comment. To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
+                        </p>
+                    </div>
+                </div>
+                <div class="addcomment" style="margin-top:50px;">
+                    <h4>Leave a Reply</br><small>Your email address will not be published</small></br>
+                    </h4>
+                    <div id="leavecommentform" class="col-md-7 col-sm-12" style="padding:0;">
+                        <div class="group">
+                            <input id="comment_text" type="text" name="name" required />
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label class="custom">Comment *</label>
+                        </div>
+                        <div class="group">
+                            <input id="commentname" type="text" name="name" required />
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label class="custom">Name *</label>
+                        </div>
+                        <div class="group">
+                            <input id="comment_email" type="text" name="name" required />
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label class="custom">Email *</label>
+                        </div>
+                        <div class="group">
+                            <input id="comment_website" type="text" name="name" required />
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label class="custom">Website</label>
+                        </div>
+                        <input id="comment_submit" type="submit" value="Send Message" class="btn">
+                    </div>
+                    <h4 id="commentstatus">
+                        <small>Your comment has been sent for moderation</small>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="singlebloglinks">
+
+        </div>
+
+    </div>
+</blogsection>
+<br/>
+<style>
+    .video_bg {
+        background-image: url('images/1_blog.jpg');
+    }
+    
+    .description h5 {
+        margin-top: 35px;
+        font-size: 22px;
+        margin-bottom: 4px;
+    }
+</style>
+<script>
+    window.onload = function() {
+        setInterval(function() {
+            $(".buffer").css('height', $('#navbarlogo').height());
+            $(".video_bg").css('height', ($(window).height() - $(".buffer").height()) / 2);
+            $(".video_bg").css('padding-top', (($(window).height() - $(".buffer").height()) / 8) - 25);
+            if (($(".video_bg").height() - $(".v_iframe").height()) > 0) {
+                $(".v_iframe").css('margin-top', ($(".video_bg").height() - $(".v_iframe").height()) / 2);
+            }
+        }, 10);
+    }
+    $(document).ready(function() {
+        $(".single-video-item").click(function() {
+            $('videolist').hide();
+            $("videosection").fadeIn();
+        })
+        if ((window.location.href).indexOf('?b=1') !== -1) {
+            $('videolist').hide();
+            $("videosection").fadeIn();
+        }
+    })
+</script>
+<script>
+    $(document).ready(function() {
+        $("#comment_submit").click(function() {
+            var id = window.location.href.substr(window.location.href.indexOf('?') + 1);
+            console.log(id);
+            var x = $("#comment_text").val();
+            var y = $("#commentname").val();
+            var z = $("#comment_email").val();
+            var w = $("#comment_website").val();
+            $.ajax({
+                url: 'http://ceoandtrends.com/myblog/wp-json/wp/v2/comments',
+                type: "POST",
+                data: {
+                    author_name: y,
+                    author_email: z,
+                    content: x,
+                    post: id
+                },
+                success: function() {
+                    $("#leavecommentform").slideUp();
+                    $("#commentstatus").slideDown();
+                }
+            })
+        })
+        $.ajax({
+            url: 'http://ceoandtrends.com/myblog/wp-json/wp/v2/posts?_embed',
+            type: "GET",
+            success: function(result) {
+                populatebloglist(result);
+            }
+        })
+    })
+
+    function populatebloglist(res) {
+        $.each(res, function(index, singleblogdata) {
+            var divTag = $(".blogtilewrapper:first").clone();
+            $(divTag).attr('onclick', 'history.pushState({}, null,"blog?' + singleblogdata.id + '")');
+            $(divTag).find('img').attr('src', $(this)[0]._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url);
+            $(divTag).find('.blogtiletitle').text($(this)[0].title.rendered);
+            $(divTag).find('.blogtitleby').text($(this)[0].date.substr(0, 10) + " by " + $(this)[0]._embedded.author[0].name);
+            (divTag).show();
+            $('bloglist').find('.container').append(divTag);
+        })
+    }
+
+    function showblog(x) {
+        $.ajax({
+            url: "http://ceoandtrends.com/myblog/wp-json/wp/v2/posts/" + x + "?_embed",
+            type: "GET",
+            success: function(res) {
+                $(".singleblogwrappertitle").text(res.title.rendered);
+                $(".singleblogwrapperby").text(res.date.substr(0, 10) + " by " + res._embedded.author[0].name);
+                $(".singleblogtext").html(res.content.rendered);
+                $(".blog_bg").css('background-image', 'url(' + res._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url + ')');
+                $('blogsection').show();
+                $('bloglist').hide();
+                $(document).attr('title', 'CEO & Trends | ' + res.title.rendered);
+                $("meta[name='title']").attr('content', 'CEO & Trends | ' + res.title.rendered);
+                $("meta[name='description']").attr('content', 'CEO & Trends | ' + res.excerpt.rendered);
+            }
+        })
+        getblogcomments(x);
+        $("#comment_text").val('');
+        $("#commentname").val('');
+        $("#comment_email").val('');
+        $("#comment_website").val('');
+        $("#leavecommentform").show();
+        $("#commentstatus").hide();
+    }
+
+    function getblogcomments(x) {
+        /*  $.ajax({
+             url: 'http://ceoandtrends.com/myblog/wp-json/wp/v2/comments?post=' + x,
+             type: "GET",
+             success: function(res) {
+                 depopulateblogcomments();
+                 populateblogs(res);
+             }
+         }) */
+        $.ajax({
+            url: 'http://ceoandtrends.com/myblog/wp-json/wp/v2/comments?post=' + x,
+            type: "GET",
+            success: function(res) {
+                depopulateblogcomments();
+                populateblogs(res);
+            }
+        })
+    }
+
+    function depopulateblogcomments() {
+        $.each($(".singlecomment"), function(index) {
+            if (index > 0) {
+                $(this).remove();
+            }
+        })
+    }
+
+    function populateblogs(res) {
+        if (res[0] == undefined) {
+            $("#commentcount").text("Be the first to comment");
+        }
+        var xc = 0;
+        $.each(res, function(index, singlecomment) {
+            var divTag = $(".singlecomment:first").clone();
+            $(divTag).find('h4').text(singlecomment.author_name);
+            $(divTag).find('h5').text(singlecomment.date.substr(0, 10));
+            $(divTag).find('p').html(singlecomment.content.rendered);
+            $(divTag).show();
+            xc++;
+            $(".commentswrapper").append(divTag);
+            console.log(xc);
+            $("#commentcount").text(xc + " Comments");
+        })
+    }
+</script>
